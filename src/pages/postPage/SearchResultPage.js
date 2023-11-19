@@ -146,7 +146,7 @@ useEffect(() => {
       const config = {
         method: 'post',
         //url: 'http://localhost:5000/message/search',
-        url: 'https://social-media-app-iota-ecru.vercel.app/message/search',
+        url: 'https://social-media-app-sandy-one.vercel.app/message/search',
         headers: {
           'Authorization': `Bearer ${token}`, // add token to headers
           'Content-Type': 'application/json' // specify content type
