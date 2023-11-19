@@ -11,7 +11,8 @@ const CommentComponent = ({postid }) => {
       try {
         const response = await axios({
           method: 'post',
-          url: 'http://localhost:5000/comment/send',
+          //url: 'http://localhost:5000/comment/send',
+          url: 'https://social-media-app-sandy-one.vercel.app/comment/send',
           data: { "commentedTo": postid },
           headers: { 'Authorization': `Bearer ${token}` }
         });
