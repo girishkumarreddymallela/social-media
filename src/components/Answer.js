@@ -24,8 +24,9 @@ const Answer = () => {
         const token = localStorage.getItem('token'); // get token from local storage
         const config = {
           method: 'get',
-         // url: 'http://localhost:5000/message/query', 
-         url: 'https://social-media-app-iota-ecru.vercel.app/message/query',
+         //url: 'http://localhost:5000/message/query', 
+         url: 'https://social-media-app-sandy-one.vercel.app/message/query',  
+
           headers: { 
             'Authorization': `Bearer ${token}` // add token to headers
           }

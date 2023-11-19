@@ -29,8 +29,8 @@ const CommentComponent = ({postid }) => {
     try {
       const response = await axios({
         method: 'post',
-       // url: 'http://localhost:5000/comment/add', 
-       url: 'https://social-media-app-iota-ecru.vercel.app/comment/add',
+        //url: 'http://localhost:5000/comment/add', 
+       url: 'https://social-media-app-sandy-one.vercel.app/comment/add',
         data: { "comment": newComment, "commentedTo": postid, "commentedBy": commentedBy },
         headers: { 'Authorization': `Bearer ${token}` }
       });

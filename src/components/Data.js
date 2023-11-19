@@ -33,7 +33,8 @@ const convertDeltaToHtml = (delta) => {
     const token = localStorage.getItem('token'); // Get jwt token from local storage
     const config={
       method: 'post',
-      url: 'http://localhost:5000/message/add',
+     // url: 'http://localhost:5000/message/add',
+      url: 'https://social-media-app-sandy-one.vercel.app/message/add',  
       data: { messageId: id, likedBy: username }, // Modified JSON object
       headers: { Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json'
@@ -59,8 +60,8 @@ const convertDeltaToHtml = (delta) => {
         const token = localStorage.getItem('token'); // get token from local storage
         const config = {
           method: 'get',
-          //url: 'http://localhost:5000/message/send',  
-          url: 'https://social-media-app-iota-ecru.vercel.app/message/send',  
+         // url: 'http://localhost:5000/message/send',  
+          url: 'https://social-media-app-sandy-one.vercel.app/message/send',  
           
           headers: { 
             'Authorization': `Bearer ${token}` // add token to headers
