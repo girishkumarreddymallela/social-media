@@ -1,0 +1,53 @@
+/* CSS File */
+
+.A2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     margin-top: 20px; 
+     
+    
+   
+    
+  }
+  
+  .B2 {
+    margin-bottom: 20px;
+    display: none;
+  }
+  
+  .C2, .D2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .E2 {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: 2px solid black;
+  }
+  
+  .F2 {
+    display: block;  /* Ensures the error message takes up its own line */
+  color: red;  /* Makes the error message red */
+  margin-top: 10px;  /* Adds some space above the error message */
+  display: none;
+  }
+  
+  .G2 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .G2:hover {
+    background-color: #45a049;
+  }
+  

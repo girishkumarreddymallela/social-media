@@ -1,0 +1,140 @@
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center; /* Center the h3 element */ 
+  padding-top: 15px;
+}
+
+.post {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px; 
+
+}  
+
+
+
+.message {
+  background-color: #f9f9f9;
+ 
+  margin-bottom: 10px; 
+
+}
+
+.message ul {
+  list-style-type: none; /* This removes the bullet points */
+  padding-left: 0px;
+}
+
+.message ul li {
+  margin-bottom: 10px; /* This creates a gap between each list item */
+  
+  /* Add a block around each list item */
+  display: block;
+  border: 1px solid #ccc;
+  padding: 10px; 
+  width:100%;
+}   
+
+/* Stylings for the "like-button" class */
+.like-button {
+  display: inline-block;
+  padding: 8px 12px; /* Slightly smaller padding */
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Slightly smaller font size */
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s; /* Smooth color transition */
+  cursor: pointer;
+}
+
+/* Hover effect for the "like-button" */
+.like-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+
+  border-radius: 5px;
+  
+  border-radius: 5px;
+  padding-bottom: 1px;
+}      
+
+
+
+.likes-section {
+  display: flex;
+  gap: 5px; 
+  align-items: center;
+}
+.user-info {
+  display: flex;
+  gap: 10px;
+}
+
+.spacer {
+  height: 500vh; /* Adjust as needed */
+}
+.button {
+  display: block;
+  padding: 5px 10px;
+  margin-right: 0px;
+  margin-top: 5px;
+  background-color: #3498db; /* Background color */
+  color: #fff; /* Text color */
+  border: 2px solid #3498db; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition on hover */
+}
+
+/* Hover effect */
+.button:hover {
+  background-color: #2980b9; /* Darker background color on hover */
+  border-color: #2980b9; /* Darker border color on hover */
+}
+
+/* Define styles for the "Answer" class */
+.Answer {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #27ae60; /* Background color */
+  color: #fff; /* Text color */
+  text-decoration: none;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+}
+
+/* Hover effect for the "Answer" class */
+.Answer:hover {
+  background-color: #2ecc71; /* Darker background color on hover */
+}
+ /*.grey{
+  background-color:cornsilk;
+  padding: 10px;
+  border-radius: 9px;
+ }  */
+
+ .crossmark{
+  margin-left: 320px;
+  margin-top: 20px;
+  background-color: none;
+  border: none;
+ } 
+ .crossmark:hover{
+  transform: scale(1.1);
+ }

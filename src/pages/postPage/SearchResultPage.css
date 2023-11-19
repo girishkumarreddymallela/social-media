@@ -1,0 +1,63 @@
+.Searchcontainer {
+  width: 100%; /* Full width */
+  max-width: 600px; /* Maximum width */
+  margin: 0 auto; /* Centering: top/bottom margin is 0, left/right is auto */
+  text-align: center; /* Center the text */
+}
+
+  .post {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .message {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .message ul {
+    list-style-type: none; /* This removes the bullet points */
+  }
+  
+  .message ul li {
+    margin-bottom: 10px; /* This creates a gap between each list item */
+    
+    /* Add a block around each list item */
+    display: block;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .like-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 15px; /* Smaller padding to make the button smaller */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Smaller font size */
+    transition: background-color 0.5s ease; /* Animation for color change */
+  }
+  
+  .like-button:active {
+    background-color: #45a049; /* Darker green */
+  }
+  
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .likes-section {
+    display: flex;
+    gap: 10px;
+  }
+  .user-info {
+    display: flex;
+    gap: 10px;
+  }
+  

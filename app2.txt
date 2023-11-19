@@ -1,0 +1,226 @@
+------------------------------client side--------------------------------------------
+src/pages/loginPage/login.js
+------------------------------
+// Import necessary libraries and components---------------------------------------------
+import React, { useState } from 'react';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import axios from 'axios'; 
+
+function Login() {
+  // State for storing the file-----------------------------------------------------------
+  const [file, setFile] = useState();
+
+  // Function to handle file input change----------------------------------------------
+  const handleFileChange = (event) => {
+    setFile(event.currentTarget.files[0]);
+  };
+
+  // Validation schema for the form------------------------------------------------------
+  const validationSchema = Yup.object().shape({
+    name: Yup.string().required('Required'),
+    password: Yup.string().required('Required'),
+  });
+
+  // Function to handle form submission-----------------------------------------------------------
+  const handleSubmit = async (values, { resetForm }) => {
+    // Create a new FormData instance---------------------------------------------------------
+    const formData = new FormData();
+
+    // Append form values to formData--------------------------------------------------------
+    formData.append('name', values.name);
+    formData.append('password', values.password);
+    formData.append('file', file);
+  
+    // Configuration for the axios request--------------------------------------------------------------
+    const config = {
+      method: 'post',
+      url: 'http://localhost:5000/api/add',
+      data: formData,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    };
+  
+    try {
+      // Send the axios request--------------------------------------
+      const response = await axios(config);
+
+      // Log the response message
+      console.log(response.data.message);
+
+      // Reset the form
+      resetForm({});
+    } catch (error) {
+
+      if(error.response.status === 409) {
+        console.log(error.response.data.message); 
+      }
+    
+      
+    }
+  };
+  
+  return (
+    <div className="App">
+      <h1>MERN Stack Simple App</h1>
+
+      {/* Formik component for form handling-------------------------------------------------------- */}
+      <Formik
+        initialValues={{ name: '', password: '' }}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        {() => (
+          <Form>
+            {/* Form fields and error messages ------------------------------------------*/}
+            <Field name="name" type="text" placeholder="Enter Name" />
+            <ErrorMessage name="name" component="div" />
+
+            <Field name="password" type="text" placeholder="Password" />
+            <ErrorMessage name="password" component="div" />
+
+            {/* File input field--------------------------------------------------------------- */}
+            <input id="file" name="file" type="file" onChange={handleFileChange} />
+
+            {/* Submit button------------------------------------------------------------------ */}
+            <button type="submit">Add User</button>
+          </Form>
+        )}
+      </Formik>
+    </div>
+  );
+}
+
+export default Login;
+
+
+------------------------------------server side------------------------------------------------------
+index.js-
+--------
+// server.js
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const multer = require('multer');
+const path = require('path');
+const app = express();
+const port = process.env.PORT || 5000;
+const Mongo_uri=process.env.MONGO_URL
+const cors = require('cors'); // Import the cors package
+
+//-------------------------------------------------------
+const corsOptions = {
+  origin: 'http://localhost:3000', // Replace with the actual origin of your frontend
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
+
+// MongoDB Atlas connection
+mongoose.connect('mongodb+srv://girish:1a9701221314@cluster0.ykap1v2.mongodb.net/?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+// Body parser middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+
+
+
+
+// Import your API routes
+const apiRoutes = require('./routes/api');
+
+// Set up API routes
+app.use('/api', apiRoutes);
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+----------------------------------------------------------------------------------
+routes/api.js-
+--------------
+// routes/api.js
+const express = require('express');
+const router = express.Router();
+const { addUser } = require('../controllers/userController');
+const upload = require('../uploadConfig');
+//---------------------------------------------------
+
+// Handle preflight requests
+router.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', corsOptions.origin);
+  res.header('Access-Control-Allow-Methods', corsOptions.methods);
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Max-Age', 86400);
+  res.sendStatus(204);
+});
+
+
+
+
+
+
+router.post('/add', upload.single('file'), addUser);
+
+module.exports = router;
+
+
+
+-----------------------------------------------------------------------------------------------
+models/User.js-
+--------------
+// models/User.js
+const mongoose = require('mongoose');
+
+const userSchema = new mongoose.Schema({
+  name: String,
+  password: String,
+  filePath: String // Storing file paths
+});
+
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;
+---------------------------------------------------------------------------------
+controllers/userController.js-
+----------------------------
+const User = require('../models/User');
+
+const addUser = async (req, res) => {
+  try {
+    const { name, password } = req.body;
+    const filePath = req.file.path;
+
+    // Check if the file path already exists in the database
+    const existingUser = await User.findOne({ filePath });
+
+    if (existingUser) {
+      return res.status(409).json({ message: 'File path already exists in the database' });
+    }
+
+    const newUser = new User({
+      name,
+      password,
+      filePath
+    });
+
+    await newUser.save();
+    res.json({ message: 'User added successfully' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+module.exports = {
+  addUser
+};

@@ -1,0 +1,52 @@
+/* Parent Component */
+.A1 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0px;
+    padding-top:50px ; 
+   
+    
+  
+  
+  
+}
+  
+  /* Child Components */
+  .B1, .E1 {
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .B1 {
+    flex: 0 0 40%;
+   
+  }
+  
+  .E1 {
+    flex: 0 0 20%;
+  }
+  
+  .c1{
+    margin: auto;
+  }
+ 
+  
+  @media (max-width: 768px) {
+    .E1 {
+      display: none;}
+
+      .B1 {
+        flex: 0 0 100%;
+      }
+
+  }
+  @media (min-width: 768px) and (max-width: 1300px) {
+    .B1 {
+        flex: 0 0 60%; /* Adjust this value as needed */
+    }
+
+    .E1 {
+        flex: 0 0 30%; /* Adjust this value as needed */
+    }
+}

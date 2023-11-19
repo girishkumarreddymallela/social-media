@@ -1,0 +1,92 @@
+/*.A4 {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    overflow-y: auto; 
+    
+  } */  
+
+  .A4 {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow-y: auto;
+  }
+  
+  /* Scrollbar styles (for webkit browsers) */
+  .A4::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .A4::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
+  
+  .A4::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  
+  .B4 {
+    width: 100%;
+    padding: 5px 0; /* Adjusted padding to create space for the text within the line */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: none; /* Remove the default border */
+    border-bottom: 2px solid black; /* Thinner black line at the bottom */
+    background: none; /* Clear background to create a seamless look */
+    outline: none; /* Remove the outline when active */
+  }
+  
+  /* Style for when the input is focused */
+  .B4:focus {
+    border-bottom: 2px solid blue; /* Example: change the color on focus */
+  }
+  
+  
+  .C4 {
+    background: none; /* Remove the background */
+    border: none; /* Remove the border */
+    padding: 0; /* Remove padding to reduce extra space */
+    font-size: 16px; /* Adjust the font size */
+    cursor: pointer; /* Show the pointer cursor on hover */
+    /* Additional styles for text color and hover effect */
+    color: black;
+  }
+  
+  .C4:hover {
+ 
+    color: blue; /* Example: Change text color on hover */
+  }
+  
+ .D4 {
+    border-bottom: 1px solid #ccc;
+    display: flex;  
+    margin-bottom: 20px;
+   
+ }
+  
+ .E4 {
+    text-indent: 0; /* Remove any default indentation */
+    margin: 0; /* Reset margin to ensure each line starts from the same point */
+    text-align: left; /* Set text alignment to left */
+  }
+  
+  .F4 { 
+    text-transform: capitalize;
+    font-weight: bold; /* Make the text bold */
+    color: black; /* Set a specific text color (you can change this to your preferred color) */
+    /* Add margin or padding to create space */
+    margin-right: 5px; /* Example margin to the right for separation */
+  }
+  
+ .A4M{
+    display: flex; 
+    resize: none;
+  }
