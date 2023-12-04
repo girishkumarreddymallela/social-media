@@ -117,7 +117,7 @@ const PostPage = () => {
               </section>
               {/* ... rest of your form */}
               <section className="section">
-        <h2>2. Ask a Question</h2>
+        <h2>2. Post a thought provoking question</h2>
         <QuillEditor name="question" setFieldValue={setFieldValue} />
         {errors.question && touched.question ? <div>{errors.question}</div> : null}
       </section>
