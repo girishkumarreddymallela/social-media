@@ -25,4 +25,13 @@
   .containerunique{
     display: flex;
     justify-content: space-around;
+  }   
+
+  @media screen and (max-width: 380px) {
+    .containerunique{
+      display: flex;
+      justify-content: space-around;
+      margin-left: -20px;
+      
+    }  
   }
