@@ -37,7 +37,7 @@ const Dashboard = () => {
       <p>We encourage users to utilize simple language to effectively communicate complex ideas. By using straightforward language, we aim to make intricate concepts more accessible and understandable to all readers.</p>
       
       <h1>Ready to start exploring? Share your thoughts and knowledge by clicking the button below</h1>
-      <Link to="/data"><button>Start</button></Link>
+      <Link to="/data" className='buttons'><button >Start</button></Link>
     </div> 
     </>
   );
