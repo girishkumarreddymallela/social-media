@@ -3,6 +3,7 @@
   max-width: 600px; /* Maximum width */
   margin: 0 auto; /* Centering: top/bottom margin is 0, left/right is auto */
   text-align: center; /* Center the text */
+  margin-top: 5px;
 }
 
   .post {

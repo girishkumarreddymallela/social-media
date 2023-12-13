@@ -15,7 +15,7 @@
     text-decoration: none;  /* Removes the underline */
     border:2px solid white;
     margin-left: 3px;
-
+    border-radius: 10px;
   }
   
   .link:hover {

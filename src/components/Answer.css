@@ -11,6 +11,11 @@
   margin-top: 40px;
  
 }   
+@media (max-width:768px) {
+  .answer-container{
+    margin-top: 0px;
+  }
+}
 .answertrick{
   height: 60px;
 }
@@ -41,6 +46,7 @@
   .title {
     color: #333;
     font-size: 1.2em;
+    margin-left: 0px;
   }
   
   .query-item {
@@ -50,6 +56,7 @@
   .query {
     color: #007BFF;
     font-size: 1em;
+    margin-left: 0px;
   }
   
   .asked-by {

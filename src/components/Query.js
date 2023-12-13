@@ -36,7 +36,7 @@ const Query = () => {
         }
       };
       await axios(config);
-      setMessage('Your data has been stored successfully.');
+      setMessage('query submitted sucessfully.');
       setInputValue(''); // clear the input field after successful submission
     } catch (error) {
       console.error('Error storing data:', error);
@@ -61,7 +61,8 @@ const Query = () => {
   return ( 
     <>
       {isNavbarVisible && <Navbar />}
-     
+   
+    <div style={{ backgroundcolor: 'aliceblue' }}>
     <div style={{ 
       display: 'flex', 
       flexDirection: 'column', 
@@ -73,6 +74,7 @@ const Query = () => {
       borderRadius: '5px' ,
       border: '2px solid blue',  // Add a blue border
       marginTop:'20px',
+      margin: "2px 10px",
       
     }}>
       <h1 style={{ color: '#007BFF' }}>Welcome to our Social Media App</h1>
@@ -87,6 +89,8 @@ const Query = () => {
       <button onClick={handleSubmit} style={{ padding: '10px 20px', backgroundColor: '#007BFF', color: '#fff', border: 'none', borderRadius: '5px', marginTop: '10px' }}>Submit</button>
       {message && <p style={{ color: '#6c757d' }}>{message}</p>}
     </div>  
+    </div>
+         
     </>
   );
 };

@@ -5,14 +5,19 @@
   padding-top: 15px;
 }
 
-.post {
+.postV {
   border: 1px solid #ccc;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px; 
 
 }  
 
+@media (max-width:400px) {
+  .postV{
+    padding: 5px;
+  }
+}
 
 
 .message {
@@ -20,6 +25,11 @@
  
   margin-bottom: 10px; 
 
+} 
+
+.quill-content {
+  text-align: justify;
+  margin-top: 5px;
 }
 
 .message ul {
@@ -137,4 +147,28 @@
  } 
  .crossmark:hover{
   transform: scale(1.1);
- }
+ } 
+
+ /*     styles for spinning bubble */
+.AppSB {
+  width: 40vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+@media (max-width:768px) {
+  .AppSB {
+    width: 100vw;
+    
+  } 
+}
+
+.containerSB {
+  width: 300px;
+  height: 300px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
