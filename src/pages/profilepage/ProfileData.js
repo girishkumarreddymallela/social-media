@@ -18,7 +18,7 @@ function ProfileData() {
   // State variable for edit mode
   const [edit, setEdit] = useState(false);
   const fileInput = useRef(null);
-  //useeffect to fetch user  data
+  //useeffect to fetch user  data from database
   useEffect(() => {
     const fetchData = async () => {
       const token = localStorage.getItem("token");
