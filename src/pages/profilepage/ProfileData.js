@@ -26,7 +26,7 @@ function ProfileData() {
       const config = {
         method: "get",
         url: "https://social-media-app-sandy-one.vercel.app/userdata/data/send",
-        // url: "http://localhost:5000/userdata/data/send",
+        //url: "http://localhost:5000/userdata/data/send",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -58,7 +58,8 @@ function ProfileData() {
 
       const config = {
         method: "get",
-        url: "http://localhost:5000/userdata/Pic/send",
+        url: "https://social-media-app-sandy-one.vercel.app/userdata/Pic/send",
+        // url: "http://localhost:5000/userdata/Pic/send",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -132,7 +133,9 @@ function ProfileData() {
     // Config for axios request
     const config = {
       method: "post",
-      url: "http://localhost:5000/userdata/data/post",
+      //url: "http://localhost:5000/userdata/data/post",
+      url: "https://social-media-app-sandy-one.vercel.app/userdata/data/post",
+
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
