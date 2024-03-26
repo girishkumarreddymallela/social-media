@@ -123,9 +123,9 @@ const PostPage = () => {
       const token = localStorage.getItem("token");
       const config = {
         method: "post",
-        // url: 'http://localhost:5000/message/add',
+        url: "http://localhost:5000/message/add",
 
-        url: "https://social-media-app-sandy-one.vercel.app/message/add",
+        // url: "https://social-media-app-sandy-one.vercel.app/message/add",
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

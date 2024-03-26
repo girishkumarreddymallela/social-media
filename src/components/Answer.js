@@ -1,16 +1,16 @@
-
-
-import React, { useContext, useEffect, useState } from 'react'; // Import useContext
-import MyContext from './MyContext';
-import './Answer.css';
-import axios from 'axios';
-import { Link } from 'react-router-dom'; // Import Link
-import Navbar from "./Navbar" ;
+import React, { useContext, useEffect, useState } from "react"; // Import useContext
+import MyContext from "./MyContext";
+import "./Answer.css";
+import axios from "axios";
+import { Link } from "react-router-dom"; // Import Link
+import Navbar from "./Navbar";
 
 const Answer = () => {
   // State variables
   const [information, setInformation] = useState([]);
-  const [isNavbarVisible, setIsNavbarVisible] = useState(window.innerWidth <= 768);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(
+    window.innerWidth <= 768
+  );
 
   // Context variables
   const { setQuery } = useContext(MyContext);
@@ -19,11 +19,11 @@ const Answer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem("token");
         const config = {
-          method: 'get',
-          //url: 'http://localhost:5000/message/query',
-          url: 'https://social-media-app-sandy-one.vercel.app/message/query',
+          method: "get",
+          url: "http://localhost:5000/message/query",
+          // url: 'https://social-media-app-sandy-one.vercel.app/message/query',
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -31,7 +31,7 @@ const Answer = () => {
         const response = await axios(config);
         setInformation(response.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -44,11 +44,11 @@ const Answer = () => {
       setIsNavbarVisible(window.innerWidth <= 768);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Clean up the event listener
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -65,7 +65,7 @@ const Answer = () => {
               to="/answer"
               onClick={() => setQuery(item.query)}
               className="query-link"
-              style={{ textDecoration: 'none', color: 'dark' }}
+              style={{ textDecoration: "none", color: "dark" }}
             >
               <h4 className="query">Question: {item.query}</h4>
               <p className="asked-by">Asked By: {item.AskedBy}</p>

@@ -1,37 +1,37 @@
 /* Hide the elements by default */
 .small-screen {
-    display: none;
-  }
-  
-  /* Show the elements on screens smaller than 992px (Bootstrap's lg breakpoint) */
-  @media screen and (max-width: 768px) {
-    .small-screen {
-      display: block;
-    }
-  }
-  /* Style for the links */
-.link {
-    color: white;  /* Tomato color */
-    text-decoration: none;  /* Removes the underline */
-    border:2px solid white;
-    margin-left: 3px;
-    border-radius: 10px;
-  }
-  
-  .link:hover {
-    color: #008080;  /* Teal color */
-  } 
+  display: none;
+}
 
-  .containerunique{
+/* Show the elements on screens smaller than 992px (Bootstrap's lg breakpoint) */
+@media screen and (max-width: 768px) {
+  .small-screen {
+    display: block;
+  }
+}
+
+/* Style for the links */
+.link {
+  color: white; /* Tomato color */
+  text-decoration: none; /* Removes the underline */
+  border: 2px solid white;
+  margin-left: 3px;
+  border-radius: 10px;
+}
+
+.link:hover {
+  color: #008080; /* Teal color */
+}
+
+.containerunique {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 380px) {
+  .containerunique {
     display: flex;
     justify-content: space-around;
-  }   
-
-  @media screen and (max-width: 380px) {
-    .containerunique{
-      display: flex;
-      justify-content: space-around;
-      margin-left: -20px;
-      
-    }  
+    margin-left: -20px;
   }
+}
