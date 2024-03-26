@@ -24,8 +24,8 @@ const Query = () => {
       const username = localStorage.getItem("username");
       const config = {
         method: "post",
-        url: "http://localhost:5000/message/query",
-        //url: 'https://social-media-app-sandy-one.vercel.app/message/query',
+        // url: "http://localhost:5000/message/query",
+        url: "https://social-media-app-sandy-one.vercel.app/message/query",
         headers: {
           Authorization: `Bearer ${token}`, // add token to headers
           "Content-Type": "application/json", // specify content type

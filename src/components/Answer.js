@@ -22,8 +22,8 @@ const Answer = () => {
         const token = localStorage.getItem("token");
         const config = {
           method: "get",
-          url: "http://localhost:5000/message/query",
-          // url: 'https://social-media-app-sandy-one.vercel.app/message/query',
+          // url: "http://localhost:5000/message/query",
+          url: "https://social-media-app-sandy-one.vercel.app/message/query",
           headers: {
             Authorization: `Bearer ${token}`,
           },

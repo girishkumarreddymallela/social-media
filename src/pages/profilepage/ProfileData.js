@@ -25,7 +25,8 @@ function ProfileData() {
 
       const config = {
         method: "get",
-        url: "http://localhost:5000/userdata/data/send",
+        url: "https://social-media-app-sandy-one.vercel.app/userdata/data/send",
+        // url: "http://localhost:5000/userdata/data/send",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,

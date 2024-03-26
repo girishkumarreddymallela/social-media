@@ -27,8 +27,8 @@ const Login = () => {
   const onSubmit = async (values, { setSubmitting }) => {
     const config = {
       method: "post",
-      url: "http://localhost:5000/auth/login",
-      // url: 'https://social-media-app-sandy-one.vercel.app/auth/login',
+      //url: "http://localhost:5000/auth/login",
+      url: "https://social-media-app-sandy-one.vercel.app/auth/login",
       headers: { "Content-Type": "application/json" },
       data: values,
     };
@@ -53,12 +53,12 @@ const Login = () => {
             break;
           default:
             setMessage("An error occurred");
-            break; // Don't forget to break after each case
+            break;
         }
       } else {
         setMessage(
           "seems like Network error check Your internet connection or else  please try after some time"
-        ); // Handle other types of errors
+        );
       }
       setSubmitting(false);
     }

@@ -11,8 +11,8 @@ const CommentComponent = ({ postid }) => {
       try {
         const response = await axios({
           method: "post",
-          url: "http://localhost:5000/comment/send",
-          // url: 'https://social-media-app-sandy-one.vercel.app/comment/send',
+          // url: "http://localhost:5000/comment/send",
+          url: "https://social-media-app-sandy-one.vercel.app/comment/send",
           data: { commentedTo: postid },
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -30,8 +30,8 @@ const CommentComponent = ({ postid }) => {
     try {
       const response = await axios({
         method: "post",
-        url: "http://localhost:5000/comment/add",
-        //url: 'https://social-media-app-sandy-one.vercel.app/comment/add',
+        // url: "http://localhost:5000/comment/add",
+        url: "https://social-media-app-sandy-one.vercel.app/comment/add",
         data: {
           comment: newComment,
           commentedTo: postid,

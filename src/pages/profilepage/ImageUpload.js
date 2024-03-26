@@ -38,7 +38,8 @@ const ImageUpload = () => {
       // Prepare the config
       const config = {
         method: "post",
-        url: "http://localhost:5000/userdata/pic/post",
+        // url: "http://localhost:5000/userdata/pic/post",
+        url: "https://social-media-app-sandy-one.vercel.app/userdata/pic/post",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,

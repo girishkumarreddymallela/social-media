@@ -21,7 +21,7 @@ const Register = () => {
   const onSubmit = async (values, { setSubmitting }) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/auth/register",
+        "https://social-media-app-iota-ecru.vercel.app/auth/register",
         values,
         {
           //'http://localhost:5000/auth/register'    //'https://social-media-app-iota-ecru.vercel.app/auth/register'
